@@ -5,262 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sariq Bola Pizza University</title>
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
-    }
-
-    body {
-      background: #111827;
-      color: #ffffff;
-      min-height: 100vh;
-    }
-
-    .login-page {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-      background: radial-gradient(circle at top, #facc15 0, #111827 38%);
-    }
-
-    .login-card {
-      width: 100%;
-      max-width: 420px;
-      background: rgba(17, 24, 39, 0.96);
-      border: 1px solid rgba(250, 204, 21, 0.35);
-      border-radius: 24px;
-      padding: 32px;
-      box-shadow: 0 25px 70px rgba(0, 0, 0, 0.45);
-    }
-
-    .logo {
-      width: 78px;
-      height: 78px;
-      border-radius: 22px;
-      background: #facc15;
-      color: #111827;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 900;
-      font-size: 28px;
-      margin-bottom: 18px;
-    }
-
-    h1 {
-      font-size: 30px;
-      line-height: 1.1;
-      margin-bottom: 10px;
-    }
-
-    .subtitle {
-      color: #d1d5db;
-      line-height: 1.5;
-      margin-bottom: 24px;
-    }
-
-    label {
-      display: block;
-      margin-bottom: 8px;
-      color: #f9fafb;
-      font-weight: 700;
-    }
-
-    input, select, textarea {
-      width: 100%;
-      padding: 14px 16px;
-      border-radius: 14px;
-      border: 1px solid #374151;
-      background: #0b1220;
-      color: #ffffff;
-      margin-bottom: 16px;
-      outline: none;
-    }
-
-    input:focus, textarea:focus {
-      border-color: #facc15;
-    }
-
-    button {
-      border: 0;
-      border-radius: 14px;
-      padding: 14px 18px;
-      cursor: pointer;
-      font-weight: 800;
-    }
-
-    .primary-btn {
-      width: 100%;
-      background: #facc15;
-      color: #111827;
-      font-size: 16px;
-    }
-
-    .error {
-      color: #fca5a5;
-      margin-top: 14px;
-      min-height: 20px;
-    }
-
-    .app {
-      display: none;
-      min-height: 100vh;
-    }
-
-    .sidebar {
-      width: 280px;
-      background: #0b1220;
-      border-right: 1px solid #1f2937;
-      padding: 22px;
-      position: fixed;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      overflow-y: auto;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 26px;
-    }
-
-    .brand-mini {
-      width: 44px;
-      height: 44px;
-      background: #facc15;
-      color: #111827;
-      border-radius: 14px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 900;
-    }
-
-    .menu button {
-      width: 100%;
-      text-align: left;
-      background: transparent;
-      color: #d1d5db;
-      margin-bottom: 8px;
-      border: 1px solid transparent;
-    }
-
-    .menu button:hover,
-    .menu button.active {
-      background: #1f2937;
-      color: #facc15;
-      border-color: #374151;
-    }
-
-    .content {
-      margin-left: 280px;
-      padding: 28px;
-    }
-
-    .topbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 16px;
-      margin-bottom: 28px;
-    }
-
-    .user-box {
-      background: #1f2937;
-      border: 1px solid #374151;
-      border-radius: 18px;
-      padding: 12px 16px;
-      color: #e5e7eb;
-    }
-
-    .logout-btn {
-      background: #ef4444;
-      color: #ffffff;
-      margin-left: 10px;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-
-    .card {
-      background: #1f2937;
-      border: 1px solid #374151;
-      border-radius: 22px;
-      padding: 22px;
-      min-height: 160px;
-    }
-
-    .card h3 {
-      margin-bottom: 10px;
-      color: #facc15;
-    }
-
-    .card p {
-      color: #d1d5db;
-      line-height: 1.5;
-      margin-bottom: 14px;
-    }
-
-    .tag {
-      display: inline-block;
-      background: rgba(250, 204, 21, 0.12);
-      color: #fde68a;
-      border: 1px solid rgba(250, 204, 21, 0.25);
-      padding: 6px 10px;
-      border-radius: 999px;
-      font-size: 12px;
-      margin: 4px 4px 0 0;
-    }
-
-    .video-box {
-      margin-top: 14px;
-      background: #111827;
-      border: 1px dashed #4b5563;
-      border-radius: 16px;
-      padding: 16px;
-      color: #9ca3af;
-    }
-
-    .admin-panel {
-      display: none;
-      margin-top: 24px;
-    }
-
-    .success {
-      color: #86efac;
-      margin-top: 10px;
-    }
-
-    @media (max-width: 900px) {
-      .sidebar {
-        position: static;
-        width: 100%;
-        border-right: 0;
-        border-bottom: 1px solid #1f2937;
-      }
-
-      .content {
-        margin-left: 0;
-      }
-
-      .grid {
-        grid-template-columns: 1fr;
-      }
-
-      .topbar {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-    }
+    *{box-sizing:border-box;margin:0;padding:0;font-family:Arial,sans-serif}body{background:#0f172a;color:#fff;min-height:100vh}.login-page{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px;background:radial-gradient(circle at top,#facc15 0,#0f172a 42%)}.login-card{width:100%;max-width:430px;background:rgba(15,23,42,.97);border:1px solid rgba(250,204,21,.35);border-radius:26px;padding:34px;box-shadow:0 25px 70px rgba(0,0,0,.45)}.logo{width:76px;height:76px;border-radius:22px;background:#facc15;color:#111827;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:28px;margin-bottom:18px}h1{font-size:30px;line-height:1.15;margin-bottom:10px}.subtitle{color:#cbd5e1;line-height:1.5;margin-bottom:22px}label{display:block;margin-bottom:7px;font-weight:800;color:#f8fafc}input,select,textarea{width:100%;padding:14px 16px;border-radius:14px;border:1px solid #334155;background:#020617;color:#fff;margin-bottom:14px;outline:none}textarea{min-height:90px;resize:vertical}input:focus,select:focus,textarea:focus{border-color:#facc15}button{border:0;border-radius:14px;padding:13px 17px;cursor:pointer;font-weight:900}.primary-btn{width:100%;background:#facc15;color:#111827;font-size:16px}.danger-btn{background:#ef4444;color:#fff}.small-btn{background:#334155;color:#fff;padding:9px 12px;font-size:13px}.error{color:#fca5a5;min-height:20px;margin-top:12px}.success{color:#86efac;margin-top:10px}.app{display:none;min-height:100vh}.sidebar{width:285px;background:#020617;border-right:1px solid #1e293b;padding:22px;position:fixed;top:0;bottom:0;left:0;overflow:auto}.brand{display:flex;align-items:center;gap:12px;margin-bottom:26px}.brand-mini{width:46px;height:46px;background:#facc15;color:#111827;border-radius:14px;display:flex;align-items:center;justify-content:center;font-weight:900}.menu button{width:100%;text-align:left;background:transparent;color:#e2e8f0;margin-bottom:8px;border:1px solid transparent}.menu button:hover,.menu button.active{background:#1e293b;color:#facc15;border-color:#475569}.content{margin-left:285px;padding:30px}.topbar{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:28px}.user-box{background:#1e293b;border:1px solid #334155;border-radius:20px;padding:13px 16px;color:#e5e7eb}.logout-btn{background:#ef4444;color:#fff;margin-left:10px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:#1e293b;border:1px solid #334155;border-radius:22px;padding:22px;min-height:150px}.card h3{margin-bottom:10px;color:#facc15}.card p{color:#dbeafe;line-height:1.55;margin-bottom:13px}.tag{display:inline-block;background:rgba(250,204,21,.13);color:#fde68a;border:1px solid rgba(250,204,21,.25);padding:6px 10px;border-radius:999px;font-size:12px;margin:4px 4px 0 0}.video-box{margin-top:14px;background:#020617;border:1px dashed #475569;border-radius:16px;padding:14px;color:#cbd5e1}.video-box a{color:#facc15}.admin-layout{display:grid;grid-template-columns:320px 1fr;gap:18px}.admin-tabs button{width:100%;margin-bottom:8px;background:#0f172a;color:#e2e8f0;border:1px solid #334155}.admin-tabs button.active{background:#facc15;color:#111827}.table{width:100%;border-collapse:collapse;margin-top:12px}.table th,.table td{border-bottom:1px solid #334155;padding:11px;text-align:left;color:#e2e8f0}.table th{color:#facc15}.test-question{background:#0f172a;border:1px solid #334155;border-radius:16px;padding:14px;margin-top:12px}.option{display:block;background:#020617;border:1px solid #334155;border-radius:12px;padding:10px;margin:8px 0;color:#e2e8f0;cursor:pointer}.option input{width:auto;margin-right:8px}.result-box{background:#064e3b;border:1px solid #10b981;border-radius:16px;padding:14px;margin-top:14px}.locked{opacity:.55}.pill{display:inline-block;padding:4px 8px;border-radius:999px;background:#0f172a;border:1px solid #334155;color:#cbd5e1;font-size:12px}@media(max-width:1000px){.sidebar{position:static;width:100%;border-right:0;border-bottom:1px solid #1e293b}.content{margin-left:0}.grid,.admin-layout{grid-template-columns:1fr}.topbar{flex-direction:column;align-items:flex-start}.user-box{width:100%}}
   </style>
 </head>
 <body>
@@ -268,250 +13,91 @@
     <div class="login-card">
       <div class="logo">SB</div>
       <h1>Sariq Bola Pizza University</h1>
-      <p class="subtitle">Xodimlar uchun darsliklar, videolar, testlar va ichki yangiliklar platformasi.</p>
-
-      <label for="login">Login</label>
-      <input id="login" type="text" placeholder="Masalan: pizzamaker" />
-
-      <label for="password">Parol</label>
-      <input id="password" type="password" placeholder="Parolni kiriting" />
-
+      <p class="subtitle">Xodimlar uchun yopiq o‘quv platforma: darslar, video qo‘llanmalar, testlar va yangiliklar.</p>
+      <label>Login</label><input id="login" type="text" placeholder="Loginni kiriting" />
+      <label>Parol</label><input id="password" type="password" placeholder="Parolni kiriting" />
       <button class="primary-btn" onclick="loginUser()">Kirish</button>
       <p class="error" id="errorText"></p>
-
     </div>
   </section>
 
   <main class="app" id="app">
     <aside class="sidebar">
-      <div class="brand">
-        <div class="brand-mini">SB</div>
-        <div>
-          <strong>Sariq Bola</strong><br />
-          <small>Pizza University</small>
-        </div>
-      </div>
-
+      <div class="brand"><div class="brand-mini">SB</div><div><strong>Sariq Bola</strong><br><small>Pizza University</small></div></div>
       <div class="menu" id="menu"></div>
     </aside>
-
     <section class="content">
       <div class="topbar">
-        <div>
-          <h1 id="pageTitle">Dashboard</h1>
-          <p class="subtitle" id="pageDesc">Sizga ruxsat berilgan bo‘limlar.</p>
-        </div>
-        <div class="user-box">
-          <span id="userInfo"></span>
-          <button class="logout-btn" onclick="logoutUser()">Chiqish</button>
-        </div>
+        <div><h1 id="pageTitle">Dashboard</h1><p class="subtitle" id="pageDesc">Sizga ruxsat berilgan bo‘limlar.</p></div>
+        <div class="user-box"><span id="userInfo"></span><button class="logout-btn" onclick="logoutUser()">Chiqish</button></div>
       </div>
-
       <div id="pageContent"></div>
     </section>
   </main>
 
-  <script>
-    const users = [
-      { login: "pizzamaker", password: "12345", name: "Pizza Maker Xodim", role: "PIZZA MAKER" },
-      { login: "kassir", password: "12345", name: "Kassir Xodim", role: "KASSIR" },
-      { login: "razdacha", password: "12345", name: "Razdacha Xodim", role: "RAZDACHA" },
-      { login: "moyka", password: "12345", name: "Moyka Xodim", role: "MOYKA" },
-      { login: "raner", password: "12345", name: "Raner Xodim", role: "RANER" },
-      { login: "manager", password: "12345", name: "Menedjer", role: "MENEDJER" },
-      { login: "boss", password: "12345", name: "Ish Boshqaruvchi", role: "ISH BOSHQARUVCHI" }
-    ];
-
-    const lessons = {
-      "YANGILIKLAR": {
-        title: "Yangiliklar",
-        desc: "Kompaniya ichidagi eng so‘nggi xabarlar va e'lonlar.",
-        cards: [
-          { title: "Yangi trening haftaligi", text: "Bu hafta barcha xodimlar tozalik va xizmat sifati bo‘yicha yangi darslarni ko‘rishi kerak.", tags: ["News", "Majburiy"] },
-          { title: "Forma standarti", text: "Ish vaqtida toza forma, bosh kiyim va gigiyena qoidalari doimiy nazoratda bo‘ladi.", tags: ["Standart"] }
-        ]
-      },
-      "PIZZA MAKER": {
-        title: "Pizza Maker Darslari",
-        desc: "Pizza tayyorlash, xamir, sous, gramovka va pishirish standartlari.",
-        cards: [
-          { title: "Xamir bilan ishlash", text: "Xamirni saqlash, ochish, gramovka va sifat nazorati.", tags: ["Dars", "Video", "Test"] },
-          { title: "Pizza yig‘ish standarti", text: "Ingredientlar ketma-ketligi, tarozi bilan ishlash va chiroyli ko‘rinish.", tags: ["Amaliyot", "Standart"] },
-          { title: "Pishirish nazorati", text: "Pech harorati, vaqt va tayyor pizzani tekshirish.", tags: ["Nazorat"] }
-        ]
-      },
-      "KASSIR": {
-        title: "Kassir Darslari",
-        desc: "Mijoz bilan muomala, buyurtma qabul qilish, iiko va kassa intizomi.",
-        cards: [
-          { title: "Mijoz bilan gaplashish", text: "Salomlashish, taklif qilish, upsell va norozilikni yumshatish.", tags: ["Muomala", "Savdo"] },
-          { title: "iiko orqali buyurtma", text: "Buyurtmani to‘g‘ri ochish, to‘lov turi va chek chiqarish.", tags: ["iiko", "Kassa"] }
-        ]
-      },
-      "RAZDACHA": {
-        title: "Razdacha Darslari",
-        desc: "Buyurtmani tayyorlab berish, chek nazorati va tezlik standarti.",
-        cards: [
-          { title: "Buyurtma tekshirish", text: "Chek bo‘yicha mahsulotlarni tekshirish va xatoni oldini olish.", tags: ["Tekshiruv"] },
-          { title: "Qadoqlash standarti", text: "Pizza, sous, salfetka va paketlash tartibi.", tags: ["Standart"] }
-        ]
-      },
-      "MOYKA": {
-        title: "Moyka Darslari",
-        desc: "Idish yuvish, sanitariya, tozalik va xavfsizlik qoidalari.",
-        cards: [
-          { title: "Moyka tartibi", text: "Idishlarni navbat bilan yuvish, quritish va joyiga qo‘yish.", tags: ["Tozalik"] },
-          { title: "Kimyoviy vositalar", text: "Vositalarni xavfsiz ishlatish va qo‘lqop bilan ishlash.", tags: ["Xavfsizlik"] }
-        ]
-      },
-      "RANER": {
-        title: "Raner Darslari",
-        desc: "Zal, yetkazish, yordamchi ishlar va tezkor xizmat standartlari.",
-        cards: [
-          { title: "Zal nazorati", text: "Stollar, pol, chiqindi va mehmonlar hududini doimiy tekshirish.", tags: ["Zal"] },
-          { title: "Tezkor yordam", text: "Kassir, razdacha va oshxonaga kerakli paytda yordam berish.", tags: ["Jamoa"] }
-        ]
-      },
-      "MENEDJER": {
-        title: "Menedjer Paneli",
-        desc: "Smena nazorati, xodimlar, xizmat sifati, tozalik va KPI.",
-        cards: [
-          { title: "Smena boshqaruvi", text: "Xodimlar joylashuvi, vazifalar taqsimoti va nazorat.", tags: ["Boshqaruv"] },
-          { title: "KPI nazorati", text: "Sotuv, o‘rtacha chek, izohlar va xizmat sifati.", tags: ["KPI"] },
-          { title: "Tozalik tekshiruvi", text: "Zona bo‘yicha tekshiruv va foto hisobot nazorati.", tags: ["Tozalik"] }
-        ]
-      },
-      "ISH BOSHQARUVCHI": {
-        title: "Ish Boshqaruvchi Admin Paneli",
-        desc: "Barcha pozitsiyalar, darslar, testlar va yangiliklarni boshqarish.",
-        cards: [
-          { title: "Barcha bo‘limlar", text: "Pizza Maker, Kassir, Razdacha, Moyka, Raner va Menedjer darslarini ko‘rish.", tags: ["Admin"] },
-          { title: "Yangi dars qo‘shish", text: "Keyingi bosqichda bu joydan video, test va yangilik qo‘shish funksiyasi ishlaydi.", tags: ["Admin", "Editor"] },
-          { title: "Xodimlar statistikasi", text: "Keyingi bosqichda kim qaysi darsni ko‘rgani va test natijalari chiqadi.", tags: ["Statistika"] }
-        ]
-      }
-    };
-
-    const access = {
-      "PIZZA MAKER": ["YANGILIKLAR", "PIZZA MAKER"],
-      "KASSIR": ["YANGILIKLAR", "KASSIR"],
-      "RAZDACHA": ["YANGILIKLAR", "RAZDACHA"],
-      "MOYKA": ["YANGILIKLAR", "MOYKA"],
-      "RANER": ["YANGILIKLAR", "RANER"],
-      "MENEDJER": ["YANGILIKLAR", "PIZZA MAKER", "KASSIR", "RAZDACHA", "MOYKA", "RANER", "MENEDJER"],
-      "ISH BOSHQARUVCHI": ["YANGILIKLAR", "PIZZA MAKER", "KASSIR", "RAZDACHA", "MOYKA", "RANER", "MENEDJER", "ISH BOSHQARUVCHI"]
-    };
-
-    let currentUser = null;
-
-    function loginUser() {
-      const login = document.getElementById("login").value.trim();
-      const password = document.getElementById("password").value.trim();
-      const errorText = document.getElementById("errorText");
-
-      const foundUser = users.find(user => user.login === login && user.password === password);
-
-      if (!foundUser) {
-        errorText.textContent = "Login yoki parol noto‘g‘ri.";
-        return;
-      }
-
-      currentUser = foundUser;
-      localStorage.setItem("sbpu_user", JSON.stringify(currentUser));
-      openApp();
-    }
-
-    function openApp() {
-      document.getElementById("loginPage").style.display = "none";
-      document.getElementById("app").style.display = "block";
-      document.getElementById("userInfo").textContent = `${currentUser.name} — ${currentUser.role}`;
-      renderMenu();
-      showPage(access[currentUser.role][0]);
-    }
-
-    function renderMenu() {
-      const menu = document.getElementById("menu");
-      menu.innerHTML = "";
-
-      access[currentUser.role].forEach(section => {
-        const btn = document.createElement("button");
-        btn.textContent = section;
-        btn.onclick = () => showPage(section);
-        btn.id = `menu-${section}`;
-        menu.appendChild(btn);
-      });
-    }
-
-    function showPage(section) {
-      const data = lessons[section];
-      document.getElementById("pageTitle").textContent = data.title;
-      document.getElementById("pageDesc").textContent = data.desc;
-
-      document.querySelectorAll(".menu button").forEach(btn => btn.classList.remove("active"));
-      const activeBtn = document.getElementById(`menu-${section}`);
-      if (activeBtn) activeBtn.classList.add("active");
-
-      let html = `<div class="grid">`;
-      data.cards.forEach(card => {
-        html += `
-          <div class="card">
-            <h3>${card.title}</h3>
-            <p>${card.text}</p>
-            ${card.tags.map(tag => `<span class="tag">${tag}</span>`).join("")}
-            <div class="video-box">Bu yerga video link yoki test joylanadi.</div>
-          </div>
-        `;
-      });
-      html += `</div>`;
-
-      if (currentUser.role === "ISH BOSHQARUVCHI" && section === "ISH BOSHQARUVCHI") {
-        html += `
-          <div class="admin-panel" style="display:block;">
-            <div class="card">
-              <h3>Yangi yangilik qo‘shish</h3>
-              <p>Bu demo versiya. Hozircha qo‘shilgan yangilik faqat ekranda ko‘rinadi. Keyingi bosqichda Firebase bazaga saqlaymiz.</p>
-              <input id="newTitle" placeholder="Yangilik sarlavhasi" />
-              <textarea id="newText" placeholder="Yangilik matni"></textarea>
-              <button class="primary-btn" onclick="addDemoNews()">Demo yangilik qo‘shish</button>
-              <p class="success" id="successText"></p>
-            </div>
-          </div>
-        `;
-      }
-
-      document.getElementById("pageContent").innerHTML = html;
-    }
-
-    function addDemoNews() {
-      const title = document.getElementById("newTitle").value.trim();
-      const text = document.getElementById("newText").value.trim();
-      const successText = document.getElementById("successText");
-
-      if (!title || !text) {
-        successText.textContent = "Avval sarlavha va matnni yozing.";
-        return;
-      }
-
-      lessons["YANGILIKLAR"].cards.unshift({ title, text, tags: ["Yangi"] });
-      successText.textContent = "Yangilik demo holatda qo‘shildi. Yangiliklar bo‘limidan ko‘ring.";
-      document.getElementById("newTitle").value = "";
-      document.getElementById("newText").value = "";
-    }
-
-    function logoutUser() {
-      localStorage.removeItem("sbpu_user");
-      currentUser = null;
-      document.getElementById("app").style.display = "none";
-      document.getElementById("loginPage").style.display = "flex";
-      document.getElementById("login").value = "";
-      document.getElementById("password").value = "";
-    }
-
-    const savedUser = localStorage.getItem("sbpu_user");
-    if (savedUser) {
-      currentUser = JSON.parse(savedUser);
-      openApp();
-    }
-  </script>
+<script>
+const POSITIONS=["PIZZA MAKER","KASSIR","RAZDACHA","MOYKA","RANER","MENEDJER","ISH BOSHQARUVCHI"];
+const DEFAULT_DATA={
+ users:[
+  {id:1,login:"admin",password:"Admin2026",name:"Platform Admin",role:"ADMIN",active:true},
+  {id:2,login:"boss",password:"12345",name:"Ish Boshqaruvchi",role:"ISH BOSHQARUVCHI",active:true},
+  {id:3,login:"manager",password:"12345",name:"Menedjer",role:"MENEDJER",active:true},
+  {id:4,login:"pizzamaker",password:"12345",name:"Pizza Maker",role:"PIZZA MAKER",active:true}
+ ],
+ news:[
+  {id:1,title:"Yangi trening haftaligi",text:"Bu hafta barcha xodimlar tozalik va xizmat sifati bo‘yicha darslarni ko‘rishi kerak.",tag:"Muhim",date:new Date().toLocaleDateString()},
+  {id:2,title:"Forma standarti",text:"Ish vaqtida toza forma, bosh kiyim va gigiyena qoidalari doimiy nazoratda bo‘ladi.",tag:"Standart",date:new Date().toLocaleDateString()}
+ ],
+ lessons:[
+  {id:1,role:"PIZZA MAKER",title:"Xamir bilan ishlash",text:"Xamirni saqlash, ochish, gramovka va sifat nazorati.",video:"",tag:"Dars"},
+  {id:2,role:"KASSIR",title:"Mijoz bilan gaplashish",text:"Salomlashish, taklif qilish, upsell va norozilikni yumshatish.",video:"",tag:"Savdo"},
+  {id:3,role:"RAZDACHA",title:"Buyurtma tekshirish",text:"Chek bo‘yicha mahsulotlarni tekshirish va xatoni oldini olish.",video:"",tag:"Tekshiruv"},
+  {id:4,role:"MOYKA",title:"Moyka tartibi",text:"Idishlarni navbat bilan yuvish, quritish va joyiga qo‘yish.",video:"",tag:"Tozalik"},
+  {id:5,role:"RANER",title:"Zal nazorati",text:"Stollar, pol, chiqindi va mehmonlar hududini doimiy tekshirish.",video:"",tag:"Zal"},
+  {id:6,role:"MENEDJER",title:"Smena boshqaruvi",text:"Xodimlar joylashuvi, vazifalar taqsimoti va nazorat.",video:"",tag:"Boshqaruv"}
+ ],
+ tests:[
+  {id:1,role:"PIZZA MAKER",title:"Pizza Maker test",question:"Pizza yig‘ishda eng muhim narsa nima?",a:"Gramovka va standart",b:"Tezlik uchun taxminiy solish",c:"Faqat ko‘rinishi",correct:"a"},
+  {id:2,role:"KASSIR",title:"Kassir test",question:"Mijoz kirganda birinchi nima qilinadi?",a:"Jim turiladi",b:"Salomlashib, yordam taklif qilinadi",c:"Faqat chek ochiladi",correct:"b"}
+ ],
+ results:[]
+};
+let db=loadDB();let currentUser=null;
+function loadDB(){let saved=localStorage.getItem("sbpu_db_v2");if(saved)return JSON.parse(saved);localStorage.setItem("sbpu_db_v2",JSON.stringify(DEFAULT_DATA));return JSON.parse(JSON.stringify(DEFAULT_DATA));}
+function saveDB(){localStorage.setItem("sbpu_db_v2",JSON.stringify(db));}
+function byId(id){return document.getElementById(id)}
+function loginUser(){let login=byId("login").value.trim();let password=byId("password").value.trim();let u=db.users.find(x=>x.login===login&&x.password===password&&x.active);if(!u){byId("errorText").textContent="Login yoki parol noto‘g‘ri.";return}currentUser=u;localStorage.setItem("sbpu_current",JSON.stringify(u));openApp()}
+function openApp(){byId("loginPage").style.display="none";byId("app").style.display="block";byId("userInfo").textContent=`${currentUser.name} — ${currentUser.role}`;renderMenu();showPage(currentUser.role==="ADMIN"?"ADMIN PANEL":"YANGILIKLAR")}
+function logoutUser(){localStorage.removeItem("sbpu_current");currentUser=null;byId("app").style.display="none";byId("loginPage").style.display="flex";byId("login").value="";byId("password").value=""}
+function allowedSections(){if(currentUser.role==="ADMIN")return ["YANGILIKLAR",...POSITIONS,"ADMIN PANEL"];if(currentUser.role==="ISH BOSHQARUVCHI")return ["YANGILIKLAR",...POSITIONS];if(currentUser.role==="MENEDJER")return ["YANGILIKLAR","PIZZA MAKER","KASSIR","RAZDACHA","MOYKA","RANER","MENEDJER"];return ["YANGILIKLAR",currentUser.role]}
+function renderMenu(){let menu=byId("menu");menu.innerHTML="";allowedSections().forEach(s=>{let b=document.createElement("button");b.textContent=s;b.id="menu-"+s;b.onclick=()=>showPage(s);menu.appendChild(b)})}
+function setActive(section){document.querySelectorAll(".menu button").forEach(b=>b.classList.remove("active"));let a=byId("menu-"+section);if(a)a.classList.add("active")}
+function showPage(section){setActive(section);if(section==="YANGILIKLAR")return renderNews();if(section==="ADMIN PANEL")return renderAdmin();return renderRole(section)}
+function renderCards(items){return `<div class="grid">${items.map(i=>`<div class="card"><h3>${i.title}</h3><p>${i.text}</p><span class="tag">${i.tag||i.role||"Dars"}</span>${i.date?`<span class="tag">${i.date}</span>`:""}<div class="video-box">${i.video?`Video: <a href="${i.video}" target="_blank">ochish</a>`:"Bu yerga video link yoki test joylanadi."}</div></div>`).join("")}</div>`}
+function renderNews(){byId("pageTitle").textContent="Yangiliklar";byId("pageDesc").textContent="Kompaniya ichidagi eng so‘nggi xabarlar va e'lonlar.";byId("pageContent").innerHTML=renderCards(db.news)}
+function renderRole(role){byId("pageTitle").textContent=role+" darslari";byId("pageDesc").textContent="Sizning pozitsiyangiz bo‘yicha darslar, video qo‘llanmalar va testlar.";let lessons=db.lessons.filter(x=>x.role===role);let tests=db.tests.filter(x=>x.role===role);let html=`<h2 style="margin-bottom:14px;color:#facc15">Darslar va video qo‘llanmalar</h2>${renderCards(lessons.length?lessons:[{title:"Hozircha dars yo‘q",text:"Admin bu bo‘limga dars qo‘shadi.",tag:"Bo‘sh"}])}<h2 style="margin:28px 0 14px;color:#facc15">Testlar</h2>`;html+=tests.length?tests.map(t=>`<div class="test-question"><h3>${t.title}</h3><p>${t.question}</p><label class="option"><input type="radio" name="t${t.id}" value="a"> ${t.a}</label><label class="option"><input type="radio" name="t${t.id}" value="b"> ${t.b}</label><label class="option"><input type="radio" name="t${t.id}" value="c"> ${t.c}</label><button class="primary-btn" onclick="checkTest(${t.id})">Javobni tekshirish</button><div id="res${t.id}"></div></div>`).join(""):`<div class="card"><h3>Hozircha test yo‘q</h3><p>Admin bu bo‘limga test qo‘shadi.</p></div>`;byId("pageContent").innerHTML=html}
+function checkTest(id){let t=db.tests.find(x=>x.id===id);let ans=document.querySelector(`input[name='t${id}']:checked`);let box=byId("res"+id);if(!ans){box.innerHTML='<p class="error">Javob tanlang.</p>';return}let ok=ans.value===t.correct;db.results.push({user:currentUser.login,name:currentUser.name,role:currentUser.role,test:t.title,result:ok?"To‘g‘ri":"Noto‘g‘ri",date:new Date().toLocaleString()});saveDB();box.innerHTML=`<div class="result-box">${ok?"✅ To‘g‘ri javob":"❌ Noto‘g‘ri javob"}</div>`}
+function renderAdmin(){if(currentUser.role!=="ADMIN"){renderNews();return}byId("pageTitle").textContent="ADMIN PANEL";byId("pageDesc").textContent="Faqat admin yangilik, dars, video, test va xodim login/parol qo‘sha oladi.";byId("pageContent").innerHTML=`<div class="admin-layout"><div class="card admin-tabs"><button onclick="adminTab('news')" id="tab-news">Yangilik qo‘shish</button><button onclick="adminTab('lesson')" id="tab-lesson">Dars / video qo‘shish</button><button onclick="adminTab('test')" id="tab-test">Test qo‘shish</button><button onclick="adminTab('user')" id="tab-user">Xodim login/parol berish</button><button onclick="adminTab('results')" id="tab-results">Test natijalari</button></div><div id="adminContent"></div></div>`;adminTab('news')}
+function adminTab(tab){document.querySelectorAll('.admin-tabs button').forEach(b=>b.classList.remove('active'));let tb=byId('tab-'+tab);if(tb)tb.classList.add('active');let c=byId('adminContent');
+ if(tab==='news')c.innerHTML=`<div class="card"><h3>Yangilik qo‘shish</h3><input id="nTitle" placeholder="Yangilik sarlavhasi"><textarea id="nText" placeholder="Yangilik matni"></textarea><input id="nTag" placeholder="Tag: Muhim, Tozalik, Forma"><button class="primary-btn" onclick="addNews()">Yangilikni saqlash</button><p id="adminMsg" class="success"></p></div>${adminListNews()}`;
+ if(tab==='lesson')c.innerHTML=`<div class="card"><h3>Dars / video qo‘llanma qo‘shish</h3><select id="lRole">${POSITIONS.map(p=>`<option>${p}</option>`).join('')}</select><input id="lTitle" placeholder="Dars nomi"><textarea id="lText" placeholder="Dars matni / qo‘llanma"></textarea><input id="lVideo" placeholder="YouTube yoki video link"><input id="lTag" placeholder="Tag: Dars, Video, Standart"><button class="primary-btn" onclick="addLesson()">Darsni saqlash</button><p id="adminMsg" class="success"></p></div>${adminListLessons()}`;
+ if(tab==='test')c.innerHTML=`<div class="card"><h3>Test qo‘shish</h3><select id="tRole">${POSITIONS.map(p=>`<option>${p}</option>`).join('')}</select><input id="tTitle" placeholder="Test nomi"><textarea id="tQuestion" placeholder="Savol"></textarea><input id="ta" placeholder="A javob"><input id="tb" placeholder="B javob"><input id="tc" placeholder="C javob"><select id="tcorr"><option value="a">To‘g‘ri javob: A</option><option value="b">To‘g‘ri javob: B</option><option value="c">To‘g‘ri javob: C</option></select><button class="primary-btn" onclick="addTest()">Testni saqlash</button><p id="adminMsg" class="success"></p></div>${adminListTests()}`;
+ if(tab==='user')c.innerHTML=`<div class="card"><h3>Yangi xodimga login/parol berish</h3><input id="uName" placeholder="Xodim ismi"><input id="uLogin" placeholder="Login"><input id="uPass" placeholder="Parol"><select id="uRole">${POSITIONS.map(p=>`<option>${p}</option>`).join('')}</select><button class="primary-btn" onclick="addUser()">Xodimni qo‘shish</button><p id="adminMsg" class="success"></p></div>${adminListUsers()}`;
+ if(tab==='results')c.innerHTML=adminListResults();
+}
+function addNews(){let title=byId('nTitle').value.trim(),text=byId('nText').value.trim(),tag=byId('nTag').value.trim()||'Yangilik';if(!title||!text)return msg('Sarlavha va matn yozing.');db.news.unshift({id:Date.now(),title,text,tag,date:new Date().toLocaleDateString()});saveDB();adminTab('news')}
+function addLesson(){let role=byId('lRole').value,title=byId('lTitle').value.trim(),text=byId('lText').value.trim(),video=byId('lVideo').value.trim(),tag=byId('lTag').value.trim()||'Dars';if(!title||!text)return msg('Dars nomi va matn yozing.');db.lessons.unshift({id:Date.now(),role,title,text,video,tag});saveDB();adminTab('lesson')}
+function addTest(){let role=byId('tRole').value,title=byId('tTitle').value.trim(),question=byId('tQuestion').value.trim(),a=byId('ta').value.trim(),b=byId('tb').value.trim(),c=byId('tc').value.trim(),correct=byId('tcorr').value;if(!title||!question||!a||!b||!c)return msg('Barcha test joylarini to‘ldiring.');db.tests.unshift({id:Date.now(),role,title,question,a,b,c,correct});saveDB();adminTab('test')}
+function addUser(){let name=byId('uName').value.trim(),login=byId('uLogin').value.trim(),password=byId('uPass').value.trim(),role=byId('uRole').value;if(!name||!login||!password)return msg('Ism, login va parol yozing.');if(db.users.some(u=>u.login===login))return msg('Bu login oldin bor. Boshqa login yozing.');db.users.push({id:Date.now(),name,login,password,role,active:true});saveDB();adminTab('user')}
+function msg(t){let m=byId('adminMsg');if(m){m.className='error';m.textContent=t}}
+function delItem(type,id){if(!confirm('O‘chirasizmi?'))return;db[type]=db[type].filter(x=>x.id!==id);saveDB();if(type==='news')adminTab('news');if(type==='lessons')adminTab('lesson');if(type==='tests')adminTab('test');if(type==='users')adminTab('user')}
+function toggleUser(id){let u=db.users.find(x=>x.id===id);if(u&&u.role!=='ADMIN'){u.active=!u.active;saveDB();adminTab('user')}}
+function adminListNews(){return `<div class="card" style="margin-top:18px"><h3>Yangiliklar ro‘yxati</h3><table class="table"><tr><th>Sarlavha</th><th>Tag</th><th></th></tr>${db.news.map(x=>`<tr><td>${x.title}</td><td>${x.tag}</td><td><button class="danger-btn" onclick="delItem('news',${x.id})">O‘chirish</button></td></tr>`).join('')}</table></div>`}
+function adminListLessons(){return `<div class="card" style="margin-top:18px"><h3>Darslar ro‘yxati</h3><table class="table"><tr><th>Role</th><th>Dars</th><th></th></tr>${db.lessons.map(x=>`<tr><td>${x.role}</td><td>${x.title}</td><td><button class="danger-btn" onclick="delItem('lessons',${x.id})">O‘chirish</button></td></tr>`).join('')}</table></div>`}
+function adminListTests(){return `<div class="card" style="margin-top:18px"><h3>Testlar ro‘yxati</h3><table class="table"><tr><th>Role</th><th>Test</th><th></th></tr>${db.tests.map(x=>`<tr><td>${x.role}</td><td>${x.title}</td><td><button class="danger-btn" onclick="delItem('tests',${x.id})">O‘chirish</button></td></tr>`).join('')}</table></div>`}
+function adminListUsers(){return `<div class="card" style="margin-top:18px"><h3>Xodimlar ro‘yxati</h3><table class="table"><tr><th>Ism</th><th>Login</th><th>Parol</th><th>Lavozim</th><th>Status</th><th></th></tr>${db.users.map(x=>`<tr><td>${x.name}</td><td>${x.login}</td><td>${x.role==='ADMIN'?'***':x.password}</td><td>${x.role}</td><td><span class="pill">${x.active?'Active':'Blocked'}</span></td><td>${x.role==='ADMIN'?'':`<button class="small-btn" onclick="toggleUser(${x.id})">Block/Active</button> <button class="danger-btn" onclick="delItem('users',${x.id})">O‘chirish</button>`}</td></tr>`).join('')}</table></div>`}
+function adminListResults(){return `<div class="card"><h3>Test natijalari</h3><table class="table"><tr><th>Xodim</th><th>Lavozim</th><th>Test</th><th>Natija</th><th>Sana</th></tr>${db.results.map(r=>`<tr><td>${r.name}</td><td>${r.role}</td><td>${r.test}</td><td>${r.result}</td><td>${r.date}</td></tr>`).join('')||'<tr><td colspan="5">Hozircha natija yo‘q</td></tr>'}</table></div>`}
+const saved=localStorage.getItem('sbpu_current');if(saved){currentUser=JSON.parse(saved);openApp()}
+</script>
 </body>
 </html>
